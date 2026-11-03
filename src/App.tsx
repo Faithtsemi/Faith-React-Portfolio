@@ -1,6 +1,7 @@
 import About from './components/About'
 import './App.css'
 import Skills from './components/Skills'
+import Projects from './components/Projects'
 function App() {
   return (
     <>
@@ -85,9 +86,9 @@ function App() {
           
     
 
-        <section id="projects" className="placeholder-section">
-          <h2>My Projects</h2>
-        </section>
+        <Projects />
+        
+      
 
         <section id="contact" className="placeholder-section">
           <h2>Contact Me</h2>

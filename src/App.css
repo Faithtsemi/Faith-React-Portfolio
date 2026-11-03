@@ -368,3 +368,130 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Projects section */
+.projects-section {
+  padding: 90px 12%;
+  background-color: #ffffff;
+}
+
+.projects-intro {
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-top: 12px;
+  max-width: 600px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 28px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.project-category {
+  color: #2563eb;
+  background-color: #eff6ff;
+  padding: 7px 11px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.project-icon {
+  color: #2563eb;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.project-card h3 {
+  color: #14213d;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.project-description {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+.project-card h4 {
+  color: #14213d;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.project-features {
+  padding-left: 20px;
+  margin-bottom: 22px;
+}
+
+.project-features li {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 15px;
+}
+
+.technology-list span {
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 7px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.project-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 22px;
+}
+
+.project-link:hover {
+  color: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 65px 7%;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
