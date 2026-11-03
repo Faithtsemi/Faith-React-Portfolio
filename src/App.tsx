@@ -1,5 +1,6 @@
 import About from './components/About'
 import './App.css'
+import Skills from './components/Skills'
 function App() {
   return (
     <>
@@ -80,9 +81,9 @@ function App() {
         <About />
       
 
-        <section id="skills" className="placeholder-section">
-          <h2>Technical Skills</h2>
-        </section>
+        <Skills />
+          
+    
 
         <section id="projects" className="placeholder-section">
           <h2>My Projects</h2>
