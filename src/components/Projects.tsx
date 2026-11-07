@@ -6,6 +6,8 @@ type Project = {
   features: string[]
   category: string
   link?: string
+  demoLink?: string
+  liveLink?: string
 }
 
 const projects: Project[] = [
@@ -27,6 +29,8 @@ const projects: Project[] = [
       'Filter tasks by status and deadline',
     ],
     category: 'Full-Stack Development',
+    link: 'https://github.com/Faithtsemi/todo-list-app',
+     demoLink:'https://youtu.be/o7Ch4E-IF0o?si=FY8dPWZ-YL6K2DSg',
   },
   {
     title: 'Optometrist Website',
@@ -46,6 +50,7 @@ const projects: Project[] = [
     ],
     category: 'Frontend Development',
     link: 'https://github.com/Faithtsemi/My-project',
+    demoLink:'https://youtu.be/fWu-p7E7teo?si=Ty2mSOUX4wr8O1oQ',
   },
 ]
 
@@ -62,13 +67,15 @@ function Projects() {
       </div>
 
       <div className="projects-grid">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <article className="project-card" key={project.title}>
             <div className="project-top">
               <span className="project-category">
                 {project.category}
               </span>
-              <span className="project-icon">01</span>
+              <span className="project-icon">
+                {String(index + 1).padStart(2, '0')}
+              </span>
             </div>
 
             <h3>{project.title}</h3>
@@ -91,16 +98,40 @@ function Projects() {
               ))}
             </div>
 
-            {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                className="project-link"
-              >
-                View on GitHub →
-              </a>
-            )}
+            <div className="project-links">
+              {project.demoLink && (
+                <a
+                  href={project.demoLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-link"
+                >
+                  Watch Demo → 
+                </a>
+              )}
+
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-link"
+                >
+                  View on GitHub →
+                </a>
+              )}
+
+              {project.liveLink && (
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-link"
+                >
+                  Live Demo →
+                </a>
+              )}
+            </div>
           </article>
         ))}
       </div>

@@ -1,11 +1,26 @@
 
+
 /* Navigation */
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 25px 8%;
   background-color: #ffffff;
+}
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #14213d;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
 }
 
 .logo {
@@ -166,17 +181,36 @@
 /* Responsive layout */
 @media (max-width: 768px) {
   .navbar {
+    position: sticky;
+    top: 0;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
+    padding: 18px 7%;
+  }
+
+  .navbar .menu-toggle {
+    display: block;
+    margin-left: auto;
   }
 
   .navbar nav {
+    display: none;
     order: 3;
     width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0;
   }
+
+  .navbar nav.active {
+    display: flex;
+  }
+
+  .navbar .nav-button {
+    display: none;
+  }
+
 
   .hero-section {
     flex-direction: column;
@@ -495,3 +529,205 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Experience and Education */
+.experience-section {
+  padding: 90px 12%;
+  background-color: #f8faff;
+}
+
+.experience-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 55px;
+  margin-top: 40px;
+}
+
+.experience-column > h3,
+.education-column > h3 {
+  color: #14213d;
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.timeline {
+  border-left: 2px solid #bfdbfe;
+  padding-left: 25px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -33px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #2563eb;
+  border: 3px solid #dbeafe;
+}
+
+.timeline-period,
+.education-period {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.timeline-item h4,
+.education-card h4 {
+  color: #14213d;
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.timeline-item h5 {
+  color: #475569;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.timeline-description {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.education-card {
+  padding: 28px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  border-top: 4px solid #2563eb;
+}
+
+.education-label {
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.education-field {
+  color: #475569;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.education-institution {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 65px 7%;
+  }
+
+  .experience-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+.contact-section {
+  padding: 100px 8%;
+  background: #f8fafc;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 40px auto 0;
+}
+
+.contact-card {
+  display: block;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #1e293b;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.contact-card span {
+  display: block;
+  margin-bottom: 10px;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.contact-card h3 {
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 25px 8%;
+  background: #0f172a;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #60a5fa;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}/* Prevent section headings from hiding behind sticky navigation */
+#home,
+#about,
+#skills,
+#projects,
+#experience,
+#contact {
+  scroll-margin-top: 110px;
+}.hero-photo {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 6px solid #ffffff;
+  box-shadow: 0 10px 35px rgba(37, 99, 235, 0.15);
+}
+
+

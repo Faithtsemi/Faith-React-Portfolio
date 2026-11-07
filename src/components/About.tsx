@@ -13,23 +13,23 @@ function About() {
 
           <p>
             I am a Computer Science graduate with a passion
-            for software development and creating practical
-            digital solutions.
+            for software development and building practical,
+            user-focused digital solutions.
           </p>
 
           <p>
-            I have professional experience as a Junior Java
-            Developer at Zaio Technology and as a Data Capture
-            Specialist at Fixxr. These experiences helped me
-            develop my technical, analytical and problem-solving
-            skills.
+            I have developed my software development skills
+            through practical training and projects with Zaio
+            Technology, alongside professional experience as
+            a Data Capture Specialist at Fixxr. These
+            experiences strengthened my technical, analytical
+            and problem-solving skills.
           </p>
 
           <p>
-            I enjoy learning new technologies, exploring
-            different approaches to solving problems and
-            developing applications that make everyday tasks
-            easier.
+            I enjoy learning new technologies, solving
+            problems and developing applications that make
+            everyday tasks easier.
           </p>
         </div>
 
@@ -38,12 +38,13 @@ function About() {
             <span>Education</span>
             <h4>BSc Mathematical Science</h4>
             <p>Computer Science</p>
+            <p>University of Limpopo | 2018–2022</p>
           </div>
 
           <div className="detail-card">
             <span>Experience</span>
             <h4>Software Development</h4>
-            <p>Junior Java Developer</p>
+            <p>Practical Training – Zaio Technology</p>
           </div>
 
           <div className="detail-card">
