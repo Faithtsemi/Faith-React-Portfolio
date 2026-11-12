@@ -20,6 +20,7 @@ export default function BugHunter() {
   const [timeLeft, setTimeLeft] = useState<number>(30);
   const [playing, setPlaying] = useState<boolean>(false);
   const [gameOver, setGameOver] = useState<boolean>(false);
+  const [showInstruction, setShowInstruction] = useState<boolean>(false);
   const idRef = useRef<number>(0);
 
   // Spawn bugs
@@ -37,6 +38,7 @@ export default function BugHunter() {
       };
 
       setBugs((prev) => [...prev.slice(-4), newBug]);
+      setShowInstruction(false);
     },  spawnSpeed);
 
     return () => clearInterval(spawn);
@@ -87,6 +89,7 @@ useEffect(() => {
     setBugs([]);
     idRef.current = 0;
     setGameOver(false);
+    setShowInstruction(true);
     setPlaying(true);
   };
 
@@ -198,14 +201,14 @@ const fixBug = (id: number) => {
             overflow: "hidden",
           }}
         >
-          {playing && bugs.length === 0 && (
-  <p
-    style={{
-      color: "#cbd5e1",
-      fontSize: "14px",
-      padding: "15px",
+          {playing && showInstruction && bugs.length === 0 && (
+        <p
+        style={{
+         color: "#cbd5e1",
+         fontSize: "14px",
+         padding: "15px",
     }}
- >
+   >
        🐛 Tap the bugs to fix them before they escape!
         </p>
         )}
