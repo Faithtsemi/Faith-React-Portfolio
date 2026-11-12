@@ -6,6 +6,7 @@ import Projects from './components/Projects'
 import Experience from './components/Experience'
 import Contact from './components/Contact'
 import profilePhoto from './assets/profile-photo.jpg'
+import BugHunter from "./components/BugHunter.tsx";
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
    return (
@@ -64,7 +65,11 @@ function App() {
          <a href="#contact" className="secondary-button">
              Contact Me
          </a>
-       </div>
+          <a href="#game" style={{ background: "#a855f7", color: "white", padding: "12px 22px", borderRadius: "999px", textDecoration: "none", fontWeight: "bold" }}>
+              🎮 Play My Game
+          </a>
+      
+        </div>
 
         <div className="social-links">
           <a
@@ -102,6 +107,15 @@ function App() {
     <Projects />
         
     <Experience />
+
+    
+   <section id="game" style={{ padding: "40px 20px", maxWidth: "800px", margin: "0 auto" }}>
+   <h2 style={{ textAlign: "center" }}>Play My Game 🎮</h2>
+   <BugHunter />
+   </section>
+   
+  
+   
 
     <Contact />
         
